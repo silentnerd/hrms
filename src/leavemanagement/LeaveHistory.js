@@ -1,18 +1,15 @@
 import React from 'react';
-import {Breadcrumb,Table, Divider, Popconfirm, Icon, Tabs } from 'antd';
+import { Breadcrumb, Table, Divider, Popconfirm, Icon, Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
-function callback(key) {
-  console.log(key);
-}
 
 class LeaveHistory extends React.Component {
-  
-  
+
+
 
   render() {
-   
+
     const allrequests = [
       {
         title: 'Employee Name',
@@ -154,31 +151,31 @@ class LeaveHistory extends React.Component {
       },
     ];
 
-  return (
-    <React.Fragment>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Leave Management</Breadcrumb.Item>
-              <Breadcrumb.Item>Leave History</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-            <Tabs onChange={callback} type="card">
-    <TabPane tab="All Requests" key="1">
-    <Table columns={allrequests} />
+    return (
+      <React.Fragment>
+        <Breadcrumb style={{ margin: '16px 0' }}>
+          <Breadcrumb.Item>Leave Management</Breadcrumb.Item>
+          <Breadcrumb.Item>Leave History</Breadcrumb.Item>
+        </Breadcrumb>
+        <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+          <Tabs >
+            <TabPane tab="All Requests" key="1">
+            <Table columns={allrequests}  />
     </TabPane>
-    <TabPane tab="Accepted" key="2">
-    <Table columns={accepted} />
+            <TabPane tab="Accepted" key="2">
+            <Table columns={accepted}  />
     </TabPane>
-    <TabPane tab="Rejected" key="3">
-    <Table columns={rejected} />
+            <TabPane tab="Rejected" key="3">
+            <Table columns={rejected}  />
     </TabPane>
-  </Tabs>
- 
-            
-            </div>
-          
-            </React.Fragment>
-  );
-}
+          </Tabs>
+
+
+        </div>
+
+      </React.Fragment>
+    );
+  }
 }
 
 export default LeaveHistory;

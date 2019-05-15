@@ -1,8 +1,7 @@
 import React from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import {Breadcrumb,Table, Divider, Popconfirm, Icon } from 'antd';
+import {Breadcrumb,Table, Divider, Popconfirm, Icon, Input } from 'antd';
 
+const Search = Input.Search;
 
 class LeaveCancelRequest extends React.Component {
   
@@ -35,7 +34,13 @@ class LeaveCancelRequest extends React.Component {
     ];
 
     const data = [
-
+      {
+        key: '1',
+        name: 'Ram',
+        view: 'view',
+        type: 'type',
+        reason: 'reason',
+      },
     ];
 
   return (
@@ -45,12 +50,15 @@ class LeaveCancelRequest extends React.Component {
               <Breadcrumb.Item>Cancel Request</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+            <Search placeholder="input search text" onSearch={value => console.log(value)}  style={{ width: 200 }}/>
+        <br></br>
+        <br></br>
+            <Table columns={columns} dataSource={data} />,
            
-            <Table columns={columns} dataSource={data} />
-
             </div>
           
             </React.Fragment>
+            
   );
 }
 }
