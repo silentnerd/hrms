@@ -3,7 +3,12 @@ import {
     Layout, Menu, Breadcrumb, Icon,
   } from 'antd';
 import { Route, Link } from 'react-router-dom'
-import AddLeave from './leavemanagement/ApplyLeave';
+import ApplyLeave from './leavemanagement/ApplyLeave';
+import CarryForwardRequest from './leavemanagement/CarryForwardRequest';
+import LeaveCancelRequest from './leavemanagement/LeaveCancelRequest';
+import LeaveHistory from './leavemanagement/LeaveHistory';
+import ViewCalendar from './leavemanagement/ViewCalendar';
+import ViewLeaveRequest from './leavemanagement/ViewLeaveRequest';
 
 
 import './Dashboard.css';
@@ -26,7 +31,7 @@ import './Dashboard.css';
     render() {
       return (
         <Layout style={{ minHeight: '100vh' }}>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed} width={200} style={{ background: '#fff' }}>
+        <Sider trigger={null} collapsible collapsed={this.state.collapsed} width={240} style={{ background: '#fff' }}>
           <div className="logo" ><img src="" width='35px'/> <a href="/">HRM</a></div>
           <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
@@ -66,7 +71,12 @@ import './Dashboard.css';
           </Header>
           <Content style={{ margin: '0 16px' }}>
           
-          <Route path='/leave/add' component={AddLeave}/>
+          <Route path='/leavemanagement/applyleave' component={ApplyLeave}/>
+          <Route path='/leavemanagement/carryforwardrequest' component={CarryForwardRequest}/>
+          <Route path='/leavemanagement/leavecancelrequest' component={LeaveCancelRequest}/>
+          <Route path='/leavemanagement/leavehistory' component={LeaveHistory}/>
+          <Route path='/leavemanagement/viewcalendar' component={ViewCalendar}/>
+          <Route path='/leavemanagement/viewleaverequest' component={ViewLeaveRequest}/>
        
 
         
