@@ -43,12 +43,12 @@ import './Dashboard.css';
               key="sub1"
               title={<span><Icon type="project" /><span>Leave Management</span></span>}
             >
-              <Menu.Item key="2"><Link to='/leave/applyleave'>Apply Leave</Link></Menu.Item>
-              <Menu.Item key="3"><Link to='/leave/viewcalendar'>View Calendar</Link></Menu.Item>
-              <Menu.Item key="4"><Link to='/leave/viewleaverequest'>View leave request</Link></Menu.Item>
-              <Menu.Item key="5"><Link to='/leave/leavehistory'>Leave history</Link></Menu.Item>
-              <Menu.Item key="6"><Link to='/leave/leavecancelrequest'>Leave cancel request</Link></Menu.Item>
-              <Menu.Item key="7"><Link to='/leave/carryforwardrequest'>Carry forward request</Link></Menu.Item>
+              <Menu.Item key="2"><Link to='/leavemanagement/applyleave'>Apply Leave</Link></Menu.Item>
+              <Menu.Item key="3"><Link to='/leavemanagement/viewcalendar'>View Calendar</Link></Menu.Item>
+              <Menu.Item key="4"><Link to='/leavemanagement/viewleaverequest'>View leave request</Link></Menu.Item>
+              <Menu.Item key="5"><Link to='/leavemanagement/leavehistory'>Leave history</Link></Menu.Item>
+              <Menu.Item key="6"><Link to='/leavemanagement/leavecancelrequest'>Leave cancel request</Link></Menu.Item>
+              <Menu.Item key="7"><Link to='/leavemanagement/carryforwardrequest'>Carry forward request</Link></Menu.Item>
             </SubMenu>
            
             <Menu.Item key="8">
