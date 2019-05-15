@@ -1,76 +1,179 @@
 import React from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import {Breadcrumb,Table, Divider, Popconfirm, Icon } from 'antd';
+import {Breadcrumb,Table, Divider, Popconfirm, Icon, Tabs } from 'antd';
 
+const TabPane = Tabs.TabPane;
+
+function callback(key) {
+  console.log(key);
+}
 
 class LeaveHistory extends React.Component {
-
-  constructor() {
-    super();
-    this.state ={
-        Projectdata:[],
-    }
-  }
-  componentDidMount(){
-    axios.get('http://localhost:5000/api/projects').then(res =>
-    {
-      this.setState({
-        Projectdata: res.data,
-    })
-    });
-  }
-
-  handleDeleteProject(id){
-    axios.delete('http://localhost:5000/api/projects/'+id).then(res => 
-    {
-        console.log(res);
-        console.log(res.data);
-    });
-    
-  }
   
-  render() {
-    
-const columns = [{
-  title: 'ID',
-  dataIndex: 'id',
-  key: 'id',
-  width: '50px',
-}, {
-  title: 'Name',
-  dataIndex: 'name',
-  key: 'name',
-}, {
-  title: 'Abbreviation',
-  dataIndex: 'abbreviation',
-  key: 'abbreviation',
-}, {
-  title: 'Action',
-  key: 'action',
-  width: '80px',
-  render: (text, record) => (
-    <span>
-      <Link to={'/project/edit/'+record.id}><Icon type="edit" className="datatable-icon" /></Link>
-      <Divider type="vertical" />
-      <Popconfirm title="Are you sure, do you want delete this project?" icon={<Icon type="question-circle-o" style={{ color: 'red' }} />} onConfirm={this.handleDeleteProject.bind(this, record.id)} onCancel={this.cancel} okText="Yes" cancelText="No">
-    <a href="#"><Icon type="delete" className="datatable-icon" /></a>
-  </Popconfirm>
-    </span>
-  ),
-}];
+  
 
+  render() {
+   
+    const allrequests = [
+      {
+        title: 'Employee Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Leave Type',
+        dataIndex: 'type',
+        key: 'type',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Start Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'End Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'No Of Days',
+        dataIndex: 'number',
+        key: 'number',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Reason',
+        dataIndex: 'reason',
+        key: 'reason',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Status',
+        dataIndex: 'status',
+        key: 'status',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+    ];
+
+    const accepted = [
+      {
+        title: 'Employee Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Leave Type',
+        dataIndex: 'type',
+        key: 'type',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Start Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'End Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'No Of Days',
+        dataIndex: 'number',
+        key: 'number',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Reason',
+        dataIndex: 'reason',
+        key: 'reason',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Accepted By',
+        dataIndex: 'acceptedby',
+        key: 'acceptedby',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+    ];
+
+    const rejected = [
+      {
+        title: 'Employee Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Leave Type',
+        dataIndex: 'type',
+        key: 'type',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Start Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'End Date',
+        dataIndex: 'date',
+        key: 'date',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'No Of Days',
+        dataIndex: 'number',
+        key: 'number',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Reason',
+        dataIndex: 'reason',
+        key: 'reason',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Rejected By',
+        dataIndex: 'rejectedby',
+        key: 'rejectedby',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Reject Reason',
+        dataIndex: 'rejectreason',
+        key: 'rejectreason',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+    ];
 
   return (
     <React.Fragment>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Project</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>Leave Management</Breadcrumb.Item>
+              <Breadcrumb.Item>Leave History</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-           
-            <Table columns={columns} dataSource={this.state.Projectdata} />
-
+            <Tabs onChange={callback} type="card">
+    <TabPane tab="All Requests" key="1">
+    <Table columns={allrequests} />
+    </TabPane>
+    <TabPane tab="Accepted" key="2">
+    <Table columns={accepted} />
+    </TabPane>
+    <TabPane tab="Rejected" key="3">
+    <Table columns={rejected} />
+    </TabPane>
+  </Tabs>
+ 
+            
             </div>
           
             </React.Fragment>

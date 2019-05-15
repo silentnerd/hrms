@@ -1,32 +1,35 @@
 import React from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
 import {Breadcrumb,Table, Divider, Popconfirm, Icon } from 'antd';
 
 
 class CarryForwardRequest extends React.Component {
 
-  constructor() {
-    super();
-    this.state ={
-        Projectdata:[],
-    }
-  }
-  componentDidMount(){
-  /*  axios.get('http://localhost:5000/api/projects').then(res =>
-    {
-      this.setState({
-        Projectdata: res.data,
-    })
-    });*/
-  }
-
- 
   render() {
+    const columns = [
+      {
+        title: 'Employee ID',
+        dataIndex: 'id',
+        key: 'id',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Employee Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'No Of Days',
+        dataIndex: 'number',
+        key: 'number',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+    ];
+
+    const data =[
+
+    ];
     
-
-
-
   return (
     <React.Fragment>
             <Breadcrumb style={{ margin: '16px 0' }}>
@@ -34,9 +37,7 @@ class CarryForwardRequest extends React.Component {
               <Breadcrumb.Item>Carry Forward Request</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-           
-           
-
+            <Table columns={columns} dataSource={data} />
             </div>
           
             </React.Fragment>
