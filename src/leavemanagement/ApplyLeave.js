@@ -19,10 +19,32 @@ const formItemLayout = {
 
 const columns = [
   {
-      title: 'Leave Type',
-      dataIndex: 'type',
-     
-    },
+         title: 'Leave Type',
+         key: 'tags',
+         dataIndex: 'tags',
+         render: tags => (
+           <span>
+             {tags.map(tag => {
+               let color = tag ;
+               if (tag === 'Medical') {
+                 color = 'volcano';
+               }
+               else if (tag === 'Annual') {
+                color = 'green';
+              }
+              else if (tag === 'Casual') {
+                color = 'geekblue';
+              }
+               
+               return (
+                 <Tag color={color} key={tag}>
+                   {tag.toUpperCase()}
+                 </Tag>
+               );
+             })}
+           </span>
+         ),
+       },
     
     {
       title: 'Start Date',
@@ -51,7 +73,7 @@ const columns = [
   const data = [
     {
       key: '1',
-      type: 'Medical',
+      tags: ['Medical'],
       sdate: '2019/05/21',
       edate: '2019/05/22',
       number:'2',
@@ -60,7 +82,7 @@ const columns = [
     },
     {
       key: '2',
-      type: 'Casual',
+      tags: ['Casual'],
       sdate: '2019/05/21',
       edate: '2019/05/23',
       number:'3',
@@ -69,7 +91,7 @@ const columns = [
     },
     {
       key: '3',
-      type: 'Annual',
+      tags: ['Annual'],
       sdate: '2019/05/21',
       edate: '2019/05/27',
       number:'7',

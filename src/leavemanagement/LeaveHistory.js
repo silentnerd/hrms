@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, Table, Divider, Popconfirm, Icon, Tabs } from 'antd';
+import { Breadcrumb, Table, Divider, Popconfirm, Icon, Tag,  Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
@@ -17,43 +17,57 @@ class LeaveHistory extends React.Component {
         key: 'name',
         render: text => <a href="javascript:;">{text}</a>,
       },
-      {
-        title: 'Leave Type',
-        dataIndex: 'type',
-        key: 'type',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Start Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'End Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'No Of Days',
-        dataIndex: 'number',
-        key: 'number',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Reason',
-        dataIndex: 'reason',
-        key: 'reason',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Status',
-        dataIndex: 'status',
-        key: 'status',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-    ];
+{
+    title: 'Leave Type',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <span>
+        {tags.map(tag => {
+          let color = tag ;
+          if (tag === 'Medical') {
+            color = 'volcano';
+          }
+          else if (tag === 'Annual') {
+           color = 'green';
+         }
+         else if (tag === 'Casual') {
+           color = 'geekblue';
+         }
+          
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </span>
+    ),
+  },
+
+{
+ title: 'Start Date',
+ dataIndex: 'sdate',
+},
+{
+ title: 'End Date',
+ dataIndex: 'edate',
+},
+{
+ title: 'Number of Days',
+ dataIndex: 'number',
+},
+{
+ title: 'Reason',
+ dataIndex: 'reason',
+},
+{
+ title: 'Status',
+ dataIndex: 'status',
+ 
+},
+
+];
 
     const accepted = [
       {
@@ -62,43 +76,62 @@ class LeaveHistory extends React.Component {
         key: 'name',
         render: text => <a href="javascript:;">{text}</a>,
       },
-      {
-        title: 'Leave Type',
-        dataIndex: 'type',
-        key: 'type',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Start Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'End Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'No Of Days',
-        dataIndex: 'number',
-        key: 'number',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Reason',
-        dataIndex: 'reason',
-        key: 'reason',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Accepted By',
-        dataIndex: 'acceptedby',
-        key: 'acceptedby',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-    ];
+{
+    title: 'Leave Type',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <span>
+        {tags.map(tag => {
+          let color = tag ;
+          if (tag === 'Medical') {
+            color = 'volcano';
+          }
+          else if (tag === 'Annual') {
+           color = 'green';
+         }
+         else if (tag === 'Casual') {
+           color = 'geekblue';
+         }
+          
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </span>
+    ),
+  },
+
+{
+ title: 'Start Date',
+ dataIndex: 'sdate',
+},
+{
+ title: 'End Date',
+ dataIndex: 'edate',
+},
+{
+ title: 'Number of Days',
+ dataIndex: 'number',
+},
+{
+ title: 'Reason',
+ dataIndex: 'reason',
+},
+{
+ title: 'Status',
+ dataIndex: 'status',
+ 
+},
+{
+ title: 'Accepted By',
+ dataIndex: 'acceptedby',
+ 
+},
+
+];
 
     const rejected = [
       {
@@ -107,49 +140,114 @@ class LeaveHistory extends React.Component {
         key: 'name',
         render: text => <a href="javascript:;">{text}</a>,
       },
-      {
-        title: 'Leave Type',
-        dataIndex: 'type',
-        key: 'type',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Start Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'End Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'No Of Days',
-        dataIndex: 'number',
-        key: 'number',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Reason',
-        dataIndex: 'reason',
-        key: 'reason',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Rejected By',
-        dataIndex: 'rejectedby',
-        key: 'rejectedby',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-      {
-        title: 'Reject Reason',
-        dataIndex: 'rejectreason',
-        key: 'rejectreason',
-        render: text => <a href="javascript:;">{text}</a>,
-      },
-    ];
+{
+    title: 'Leave Type',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <span>
+        {tags.map(tag => {
+          let color = tag ;
+          if (tag === 'Medical') {
+            color = 'volcano';
+          }
+          else if (tag === 'Annual') {
+           color = 'green';
+         }
+         else if (tag === 'Casual') {
+           color = 'geekblue';
+         }
+          
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </span>
+    ),
+  },
+
+{
+ title: 'Start Date',
+ dataIndex: 'sdate',
+},
+{
+ title: 'End Date',
+ dataIndex: 'edate',
+},
+{
+ title: 'Number of Days',
+ dataIndex: 'number',
+},
+{
+ title: 'Reason',
+ dataIndex: 'reason',
+},
+{
+ title: 'Status',
+ dataIndex: 'status',
+ 
+},
+{
+   title: 'Rejected By',
+   dataIndex: 'rejectedby',
+   
+ },
+ {
+   title: 'Reject Reason',
+   dataIndex: 'rejectreason',
+   
+},
+
+];
+const data = [
+  {
+    key: '1',
+    tags: ['Medical'],
+    sdate: '2019/05/21',
+    edate: '2019/05/22',
+    number:'2',
+    reason:'Medical',
+    status:'1',
+   name:'Karan',
+   rejectreason : 'No Leave',
+   rejectedby : 'HR',
+   acceptedby :'HR',
+  },
+  {
+    key: '2',
+    tags: ['Casual'],
+    sdate: '2019/05/21',
+    edate: '2019/05/23',
+    number:'3',
+    reason:'Wedding',
+    status:'1',
+   name:'Sujeeban',
+   rejectreason : 'No Leave',
+   rejectedby : 'HR',
+   acceptedby :'HR',
+  },
+  {
+    key: '3',
+    tags: ['Annual'],
+    sdate: '2019/05/21',
+    edate: '2019/05/27',
+    number:'7',
+    reason:'Trip',
+    status:'1',
+   name:'Keerthi',
+   rejectreason : 'No Leave',
+   rejectedby : 'HR',
+   acceptedby :'HR',
+  },
+  
+  
+  
+ 
+];
+
+
 
     return (
       <React.Fragment>
@@ -160,13 +258,13 @@ class LeaveHistory extends React.Component {
         <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
           <Tabs >
             <TabPane tab="All Requests" key="1">
-            <Table columns={allrequests}  />
+            <Table columns={allrequests} dataSource={data} />
     </TabPane>
             <TabPane tab="Accepted" key="2">
-            <Table columns={accepted}  />
+            <Table columns={accepted}  dataSource={data}/>
     </TabPane>
             <TabPane tab="Rejected" key="3">
-            <Table columns={rejected}  />
+            <Table columns={rejected}  dataSource={data}/>
     </TabPane>
           </Tabs>
 
