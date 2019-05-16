@@ -8,33 +8,12 @@
   margin:0 auto;
 }
 
-.container-avatar {
-  height: 60px;
-  padding: 1em;
-  text-align: center;
-  display: inline-flex;
-  text-decoration: none !important;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
-.container-avatar p {
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
 .logo a{
   margin-top: 15px;
   margin-left:10px;
   color:#007bff;
   font-size: 1.5em;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 600px) {
-  .ant-layout-sider {
-    display: none;
-  }
 }
 
 #components-layout-demo-custom-trigger .trigger {

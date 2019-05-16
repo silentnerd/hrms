@@ -1,60 +1,48 @@
 import React from 'react';
-import {Breadcrumb, Table, Divider, Popconfirm, Icon} from 'antd';
+import {Breadcrumb,Table, Divider, Popconfirm, Icon } from 'antd';
+
 
 class CarryForwardRequest extends React.Component {
 
-    render() {
-        const dataSource = [
-            {
-                key: '1',
-                empId: 'EMP1',
-                name: 'Mark',
-                noOfDays: '25'
-            }, {
-                key: '2',
-                empId: 'EMP2',
-                name: 'Tom',
-                noOfDays: '12'
-            }
-        ];
-        const columns = [
-            {
-                title: 'Employee ID',
-                dataIndex: 'empId',
-                key: 'empId'
-            }, {
-                title: 'Employee Name',
-                dataIndex: 'name',
-                key: 'name'
-            }, {
-                title: 'No Of Days',
-                dataIndex: 'noOfDays',
-                key: 'noOfDays'
-            }
-        ];
+  render() {
+    const columns = [
+      {
+        title: 'Employee ID',
+        dataIndex: 'id',
+        key: 'id',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'Employee Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+      {
+        title: 'No Of Days',
+        dataIndex: 'number',
+        key: 'number',
+        render: text => <a href="javascript:;">{text}</a>,
+      },
+    ];
 
-        const data = [];
+    const data =[
 
-        return (
-            <React.Fragment>
-                <Breadcrumb style={{
-                    margin: '16px 0'
-                }}>
-                    <Breadcrumb.Item>Leave Management</Breadcrumb.Item>
-                    <Breadcrumb.Item>Carry Forward Request</Breadcrumb.Item>
-                </Breadcrumb>
-                <div
-                    style={{
-                    padding: 24,
-                    background: '#fff',
-                    minHeight: 360
-                }}>
-                    <Table columns={columns} dataSource={dataSource}/>
-                </div>
-
+    ];
+    
+  return (
+    <React.Fragment>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Leave Management</Breadcrumb.Item>
+              <Breadcrumb.Item>Carry Forward Request</Breadcrumb.Item>
+            </Breadcrumb>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+            <Table columns={columns} dataSource={data} />
+            </div>
+          
             </React.Fragment>
-        );
-    }
+  );
+}
 }
 
 export default CarryForwardRequest;
