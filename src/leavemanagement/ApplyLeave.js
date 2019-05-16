@@ -22,8 +22,6 @@ import {
     Cascader
 } from 'antd';
 import './ApplyLeave.css';
-const {MonthPicker, RangePicker} = DatePicker;
-import { Form, Upload, Breadcrumb, Statistic, Tag, Table,  Icon, Input, Col,Select, Row, Button, DatePicker} from 'antd';
 const { MonthPicker, RangePicker } = DatePicker;
 const dateFormat = 'YYYY/MM/DD';
 const InputGroup = Input.Group;

@@ -1,0 +1,72 @@
+.login-center{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 200px;
+  color: #1890ff;
+  font-weight: 500;
+  font-size: 32px;
+  margin-left: 90px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-form {
+  width: 320px;
+  margin: auto;
+  margin-top:100px;
+  margin-left:170px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:50px;
+  padding-bottom:30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.login-form-forgot {
+  float:right;
+font-size:12px;
+}
+.login-form-button {
+  width: 100%;
+  margin-top:20px;
+}
+.login-form-button {
+  width: 100%;
+}
+.txt1 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #666666;
+  line-height: 3.5;
+  text-align: center;
+  margin-left: 35px;
+}
+a {
+  font-size: 12px;
+  color: #1890ff;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects;
+  margin-left: 5px;
+}
+
+
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: center;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
