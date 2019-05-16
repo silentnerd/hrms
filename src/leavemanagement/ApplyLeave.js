@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import moment from 'moment';
-import {Content, Form, Upload, Breadcrumb, Statistic,Divider, Tag, Table,  Icon, Input, Col,Select, Row, Button, DatePicker,InputNumber, AutoComplete, Cascader} from 'antd';
+import { Form, Upload, Breadcrumb, Statistic, Tag, Table,  Icon, Input, Col,Select, Row, Button, DatePicker} from 'antd';
 
 
 const { MonthPicker, RangePicker } = DatePicker;

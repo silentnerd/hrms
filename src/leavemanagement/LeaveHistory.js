@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, Table, Divider, Popconfirm, Icon, Tag,  Tabs } from 'antd';
+import { Breadcrumb, Table,  Tag,  Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 

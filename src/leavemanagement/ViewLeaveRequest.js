@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, Table, Divider, Popconfirm, Icon, Tag, Input } from 'antd';
+import { Breadcrumb, Table, Tag, Input } from 'antd';
 
 const Search = Input.Search;
 
