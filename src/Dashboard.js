@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
+import {Layout, Menu, Breadcrumb, Icon, Avatar, Badge, Row, Col} from 'antd';
 import {Route, Link, Switch} from 'react-router-dom'
 import ApplyLeave from './leavemanagement/ApplyLeave';
 import CarryForwardRequest from './leavemanagement/CarryForwardRequest';
@@ -37,6 +37,10 @@ class Dashboard extends React.Component {
         }
     };
 
+    logout = () =>{
+
+    }
+
     render() {
         return (
          
@@ -59,7 +63,7 @@ class Dashboard extends React.Component {
                       background: '#fff',
                       display: this.state.SiderMobileCollapse
                     }}>
-                    <div className="logo"><img src="" width='35px'/><a href="/">HRM</a></div>
+                    <div className="logo"><img src="" width='35px'/><a href="/">Leave Management</a></div>
                     <br></br>
                     <div className="container-avatar"><Avatar size="large" icon="user"/>
                         <p style={{display: this.state.avatarFullname}}>Firstname Lastname</p>
@@ -76,7 +80,7 @@ class Dashboard extends React.Component {
 
                         <SubMenu
                             key="sub1"
-                            title={< span > <Icon type="project"/><span>Leave Management </span></span >}>
+                            title={<span><Icon type="project"/><span>Leave Management</span></span >}>
                             <Menu.Item key="2">
                                 <Link to='/leavemanagement/applyleave'>Apply Leave</Link>
                             </Menu.Item>
@@ -110,16 +114,46 @@ class Dashboard extends React.Component {
                         background: '#007bff',
                         paddingLeft: '14px'
                         }}>
+                         <div style={{float: 'left'}}>
+                         
                         <Icon
                             style={{
                             color: 'white',
-                            fontSize: '18px'
+                            fontSize: '18px',
+                            padding: '20px',
                             }}
                             className="trigger"
                             type={this.state.collapsed
                             ? 'menu-unfold'
                             : 'menu-fold'}
                             onClick={this.toggle}/>
+                            </div>
+                            <Row style={{width: '60px', float: 'right'}} type="flex" justify="end">
+                            <Col span={12}>
+                            <Badge count={2} showZero> 
+                              <Icon
+                              style={{
+                              color: 'white',
+                              fontSize: '18px',
+                              float: 'right',
+                              }}
+                              align="right"
+                              type="bell"/>
+                              </Badge>
+                            </Col>
+                            <Col span={12}>
+                              <Icon
+                              style={{
+                              color: 'white',
+                              fontSize: '18px',
+                              padding: '20px 0 20px 20px',
+                              float: 'right',
+                              }}
+                              align="right"
+                              type="logout"
+                              onClick={this.logout}/>
+                            </Col>
+                          </Row>
                     </Header>
                     <Content
                         style={{

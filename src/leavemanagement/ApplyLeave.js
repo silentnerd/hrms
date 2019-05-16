@@ -21,7 +21,7 @@ import {
     AutoComplete,
     Cascader
 } from 'antd';
-
+import './ApplyLeave.css';
 const {MonthPicker, RangePicker} = DatePicker;
 
 const dateFormat = 'YYYY/MM/DD';
@@ -95,7 +95,7 @@ class ApplyLeave extends React.Component {
         return (
             <React.Fragment>
                 <Row>
-                    <Col span={16}>
+                    <Col  id="responsive-div1" span={16}>
                         <Breadcrumb
                             style={{
                             margin: '16px 0'
@@ -114,7 +114,7 @@ class ApplyLeave extends React.Component {
                                 <Col span={24}>
                                     <InputGroup>
                                         <Row gutter={24}>
-                                            <Col span={6}>
+                                            <Col id="responsive-input1" span={6}>
                                                 <Form.Item hasFeedback label="Start Date" layout='inline'>
                                                     <div>
                                                         <DatePicker
@@ -125,7 +125,7 @@ class ApplyLeave extends React.Component {
                                                 </Form.Item>
 
                                             </Col>
-                                            <Col span={6}>
+                                            <Col id="responsive-input2" span={6}>
                                                 <Form.Item hasFeedback label="End Date" layout='vertical'>
                                                     <div>
                                                         <DatePicker
@@ -136,7 +136,7 @@ class ApplyLeave extends React.Component {
                                                 </Form.Item>
 
                                             </Col>
-                                            <Col span={6}>
+                                            <Col id="responsive-input3" span={6}>
                                                 <Form.Item hasFeedback label="Number of Days" layout='vertical'>
                                                     <div>
                                                         <Input defaultValue="0" disabled/>
@@ -149,7 +149,7 @@ class ApplyLeave extends React.Component {
 
                                     <InputGroup>
                                         <Row gutter={24}>
-                                            <Col span={10}>
+                                            <Col id="responsive-input4" span={12}>
                                                 <Form.Item hasFeedback label="Type of Leave" layout='vertical'>
                                                     <InputGroup compact>
 
@@ -163,7 +163,7 @@ class ApplyLeave extends React.Component {
                                                 </Form.Item>
                                             </Col>
 
-                                            <Col span={10}>
+                                            <Col id="responsive-input5" span={12}>
                                                 <Form.Item hasFeedback label="Attachments" layout='vertical'>
                                                     <div>
                                                         <Upload {...props}>
@@ -215,7 +215,7 @@ class ApplyLeave extends React.Component {
 
                     </Col>
 
-                    <Col span={8}>
+                    <Col id="responsive-div2" span={8}>
 
                         <Breadcrumb
                             style={{
