@@ -10,11 +10,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 1. **Clone the application**
-```
-bash
-	git clone https://github.com/silentnerd/hrms.git
-	cd hrms
-```
+
+	```bash
+	  git clone https://github.com/silentnerd/hrms.git
+	  cd hrms
+	```
 
 ## Steps to Setup the React Front end app (hrms)
 
