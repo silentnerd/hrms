@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
 import moment from 'moment';
 import {
     Breadcrumb,
@@ -13,17 +11,11 @@ import {
     DatePicker,
     Select,
     Checkbox,
-    Alert,
-    Divider,
     Modal,
     message
 } from 'antd';
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
 import './ViewCalendar.css';
-import '../main.scss' // 
-import LeaveCalendarComponent from './LeaveCalendarComponent'
-const FormItem = Form.Item;
+import LeaveCalendarComponent from '../LeaveCalendarComponent'
 const Option = Select.Option;
 
 class ViewCalendar extends React.Component {
@@ -79,11 +71,11 @@ class ViewCalendar extends React.Component {
 
     handleChangeLeaveColor(value) {
         console.log(`selected ${value}`);
-        if (value == "red") {
+        if (value === "red") {
             this.setState({changePrimaryColorStyle: "#f5222d", changeSecondaryColorStyle: "#f86b73"});
-        } else if (value == "blue") {
+        } else if (value === "blue") {
             this.setState({changePrimaryColorStyle: "#1890ff", changeSecondaryColorStyle: "#65b5ff"});
-        } else if (value == "yellow") {
+        } else if (value === "yellow") {
             this.setState({changePrimaryColorStyle: "#fadb14", changeSecondaryColorStyle: "#fce65f"});
         } else {}
 
@@ -131,7 +123,7 @@ class ViewCalendar extends React.Component {
 
     onChangeAllDay(e) {
         console.log(`checked = ${e.target.checked}`);
-        if (e.target.checked == true) {
+        if (e.target.checked === true) {
             this.setState({chkboxAllDay: 'true', chkboxAfterEndDisabled: true, chkboxBeforeStartDisabled: true});
 
         } else {
@@ -141,7 +133,7 @@ class ViewCalendar extends React.Component {
 
     onChangeDraggable(e) {
         console.log(`checked = ${e.target.checked}`);
-        if (e.target.checked == true) {
+        if (e.target.checked === true) {
             this.setState({chkboxDraggable: 'true'});
         } else {
             this.setState({chkboxDraggable: 'false'});
@@ -151,13 +143,13 @@ class ViewCalendar extends React.Component {
     onChangeBeforeStart(e) {
         console.log(`checked = ${e.target.checked}`);
 
-        if (this.state.chkboxAfterEnd == 'true' || e.target.checked == true) {
+        if (this.state.chkboxAfterEnd === 'true' || e.target.checked === true) {
             this.setState({chkboxAllDayDisabled: true});
-        } else if (this.state.chkboxAfterEnd == 'false' || e.target.checked == false) {
+        } else if (this.state.chkboxAfterEnd === 'false' || e.target.checked === false) {
             this.setState({chkboxAllDayDisabled: false});
         }
 
-        if (e.target.checked == true) {
+        if (e.target.checked === true) {
             this.setState({chkboxBeforeStart: 'true'});
         } else {
             this.setState({chkboxBeforeStart: 'false'});
@@ -166,13 +158,13 @@ class ViewCalendar extends React.Component {
 
     onChangeAfterEnd(e) {
         console.log(`checked = ${e.target.checked}`);
-        if (this.state.chkboxBeforeStart == 'true' || e.target.checked == true) {
+        if (this.state.chkboxBeforeStart === 'true' || e.target.checked === true) {
             this.setState({chkboxAllDayDisabled: true});
-        } else if (this.state.chkboxBeforeStart == 'false' || e.target.checked == false) {
+        } else if (this.state.chkboxBeforeStart === 'false' || e.target.checked === false) {
             this.setState({chkboxAllDayDisabled: false});
         }
 
-        if (e.target.checked == true) {
+        if (e.target.checked === true) {
             this.setState({chkboxAfterEnd: 'true'});
         } else {
             this.setState({chkboxAfterEnd: 'false'});
@@ -186,7 +178,7 @@ class ViewCalendar extends React.Component {
     handleOk = e => {
         console.log(e);
         this.setState({visible: false});
-        message.success('New event entered successfully !' + this.disabledStartDate);
+        message.success('New event entered successfully !');
     };
 
     handleCancel = e => {

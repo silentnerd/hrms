@@ -1,5 +1,5 @@
 import React from 'react';
-import {Breadcrumb, Table, Divider, Popconfirm, Icon} from 'antd';
+import {Breadcrumb, Table} from 'antd';
 
 class CarryForwardRequest extends React.Component {
 
@@ -32,8 +32,6 @@ class CarryForwardRequest extends React.Component {
                 key: 'noOfDays'
             }
         ];
-
-        const data = [];
 
         return (
             <React.Fragment>

@@ -1,38 +1,26 @@
 import React from 'react';
-import axios from 'axios';
 import moment from 'moment';
 import {
-    Content,
     Form,
     Upload,
     Breadcrumb,
     Statistic,
-    Divider,
-    Tag,
     Table,
     Icon,
+    Tag,
     Input,
     Col,
     Select,
     Row,
     Button,
     DatePicker,
-    InputNumber,
-    AutoComplete,
-    Cascader
 } from 'antd';
 import './ApplyLeave.css';
-const { MonthPicker, RangePicker } = DatePicker;
 const dateFormat = 'YYYY/MM/DD';
 const InputGroup = Input.Group;
 const Option = Select.Option;
 const { TextArea } = Input;
-const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 const props = Upload;
-const formItemLayout = {
-  labelCol: { span: 8},
-  wrapperCol: { span: 16},
-};
 
 const columns = [
   {

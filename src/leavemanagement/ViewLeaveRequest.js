@@ -11,7 +11,6 @@ class ViewLeaveRequest extends React.Component {
              title: 'Employee Name',
              dataIndex: 'name',
              key: 'name',
-             render: text => <a href="javascript:;">{text}</a>,
            },
            {
              title: 'Start Date',

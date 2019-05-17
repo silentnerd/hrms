@@ -2,9 +2,6 @@ import React from 'react';
 import {
     Breadcrumb,
     Table,
-    Divider,
-    Popconfirm,
-    Icon,
     Input
 } from 'antd';
 
@@ -17,23 +14,19 @@ class LeaveCancelRequest extends React.Component {
             {
                 title: 'Employee Name',
                 dataIndex: 'name',
-                key: 'name',
-                render: text => <a href="javascript:;">{text}</a>
+                key: 'name'
             }, {
                 title: 'View Leave',
                 dataIndex: 'view',
-                key: 'view',
-                render: text => <a href="javascript:;">{text}</a>
+                key: 'view'
             }, {
                 title: 'Leave Type',
                 dataIndex: 'type',
-                key: 'type',
-                render: text => <a href="javascript:;">{text}</a>
+                key: 'type'
             }, {
                 title: 'Cancel Reason',
                 dataIndex: 'reason',
-                key: 'reason',
-                render: text => <a href="javascript:;">{text}</a>
+                key: 'reason'
             }
         ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './Signup.css';
-import { Form, Icon, Input, Button, Checkbox, Select} from 'antd';
+import { Form, Icon, Input, Button, Select} from 'antd';
 
 
 const Option=Select.Option;
@@ -20,11 +20,11 @@ class Signup extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
          
-      <div className="Signup">
+      <div className="signup-center">
       
       <Form onSubmit={this.handleSubmit} className="signup-form">
 
-      <h5>SignUp</h5>
+      <h5>Leave Management System</h5>
     
       
         <Form.Item>
@@ -77,7 +77,7 @@ class Signup extends React.Component {
           <Button type="primary" htmlType="submit" className="signup-form-button">
            SignUp
           </Button>
-          <Button  href="singup" type="default" htmlType="submit" className="signup-form-button">Login</Button>
+          <Button  href="/login" type="default" htmlType="submit" className="signup-form-button">Login</Button>
        
       </Form>
       </div>
