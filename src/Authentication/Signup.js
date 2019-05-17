@@ -52,7 +52,7 @@ class Signup extends React.Component {
           {getFieldDecorator('role', {
             rules: [{ required: true, message: 'Please input your role!' }],
           })(
-            <Select defaultValue="hr" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}> 
+            <Select defaultValue="HR" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}> 
             <Option value="hr">HR</Option>
             <Option value="admin">admin</Option>
             <Option value="accountant">Accountant</Option>

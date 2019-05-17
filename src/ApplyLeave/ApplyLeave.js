@@ -1,5 +1,7 @@
 import React from 'react';
 import moment from 'moment';
+import axios from 'axios';
+import {getAllLeaveType} from '../util/APIUtils';
 import {
     Form,
     Upload,
@@ -103,15 +105,42 @@ const columns = [
       reason:'Trip',
       status:'1',
     },
-    
-    
-    
-   
+
   ];
+
+const leaveType = [];
+ getAllLeaveType().then((response) => {
+        for (let i = 0; i < response.length; i++) {
+  
+            leaveType.push(<Option key={response[i].leaveTypeValue}>{response[i].leaveTypeValue}</Option>);
+
+        }
+        
+    });
+
 
 class ApplyLeave extends React.Component {
 
+   constructor(props) {
+       super(props);
+       this.state = {
+        
+       }
+       //this.refreshgetAllLeaveType = this.refreshgetAllLeaveType.bind(this)
+   }
+
+    componentDidMount() {
+        //refreshgetAllLeaveType();
+  
+        
+
+    }
+
+
+   
+
     render() {
+        
         return (
             <React.Fragment>
                 <Row>
@@ -174,9 +203,7 @@ class ApplyLeave extends React.Component {
                                                     <InputGroup compact>
 
                                                         <Select defaultValue="Type of Leave">
-                                                            <Option value="Annual">Annual</Option>
-                                                            <Option value="Casual">Casual</Option>
-                                                            <Option value="Medical">Medical</Option>
+                                                            {leaveType}
                                                         </Select>
 
                                                     </InputGroup>

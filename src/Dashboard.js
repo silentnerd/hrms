@@ -1,15 +1,15 @@
 import React from 'react';
 import {Layout} from 'antd';
 import {Route, Switch} from 'react-router-dom'
-import ApplyLeave from './leavemanagement/ApplyLeave/ApplyLeave';
-import CarryForwardRequest from './leavemanagement/CarryForwardRequest';
-import LeaveCancelRequest from './leavemanagement/LeaveCancelRequest';
-import LeaveHistory from './leavemanagement/LeaveHistory';
-import ViewCalendar from './leavemanagement/ViewCalendar/ViewCalendar';
-import ViewLeaveRequest from './leavemanagement/ViewLeaveRequest';
-import Login from './leavemanagement/Authentication/Login';
-import SignUp from './leavemanagement/Authentication/Signup';
-import ForgotPassword from './leavemanagement/Authentication/ForgetPassword';
+import ApplyLeave from './ApplyLeave/ApplyLeave';
+import CarryForwardRequest from './CarryForwardRequest';
+import LeaveCancelRequest from './LeaveCancelRequest';
+import LeaveHistory from './LeaveHistory';
+import ViewCalendar from './ViewCalendar/ViewCalendar';
+import ViewLeaveRequest from './ViewLeaveRequest';
+import Login from './Authentication/Login';
+import SignUp from './Authentication/Signup';
+import ForgotPassword from './Authentication/ForgetPassword';
 import HeaderComponent from './HeaderComponent';
 import SiderComponent from './SiderComponent';
 import './Dashboard.css';
@@ -20,22 +20,26 @@ import './Dashboard.css';
       collapsed: false,
     };
 
-    toggle = () => {
-      this.setState({
-        collapsed: !this.state.collapsed,
-      });
-    };
-
+    
+toggle = () => {
+  this.setState(prevState => ({
+    collapsed: !prevState.collapsed
+  }));
+};
     logout = () =>{
 
     }
     render() {
       return (
         <Layout style={{ minHeight: '100vh' }}>
-            <Route path="/leavemanagement" component={SiderComponent} />
+        <Route path="/leavemanagement" 
+                  render={(props) => <SiderComponent isCollapsed={this.state.collapsed} {...props} />}></Route>
+            
              
                 <Layout>
-                  <Route path="/leavemanagement" component={HeaderComponent} />  
+
+                  <Route path="/leavemanagement" 
+                  render={(props) => <HeaderComponent isCollapsed={this.state.collapsed} {...props} />}></Route>
                     <Content
                         style={{
                         margin: '24px 16px 0'

@@ -6,6 +6,7 @@ import {
     Row,
     Col
 } from 'antd';
+import {Link} from 'react-router-dom';
 import './Dashboard.css';
 const {Header} = Layout;
 
@@ -71,6 +72,7 @@ class HeaderComponent extends React.Component {
                         </Badge>
                     </Col>
                     <Col span={12}>
+                        <Link to="/login">
                         <Icon
                             style={{
                             color: 'white',
@@ -81,6 +83,7 @@ class HeaderComponent extends React.Component {
                             align="right"
                             type="logout"
                             onClick={this.logout}/>
+                            </Link>
                     </Col>
                 </Row>
             </Header>

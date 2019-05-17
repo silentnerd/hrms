@@ -15,7 +15,7 @@ import {
     message
 } from 'antd';
 import './ViewCalendar.css';
-import LeaveCalendarComponent from '../LeaveCalendarComponent'
+//import LeaveCalendarComponent from '../LeaveCalendarComponent'
 const Option = Select.Option;
 
 class ViewCalendar extends React.Component {
@@ -208,7 +208,7 @@ class ViewCalendar extends React.Component {
                     <br></br>
                     <br></br>
 
-                    <LeaveCalendarComponent/>
+                    
                 </div>
 
                 <Modal

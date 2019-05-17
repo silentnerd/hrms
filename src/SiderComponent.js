@@ -6,15 +6,15 @@ import './Dashboard.css';
   const SubMenu = Menu.SubMenu;
   
   class SiderComponent extends React.Component {
-    state = {
-      collapsed: false,
-    };
+      constructor(props) {
+        super(props);
 
-    toggle = () => {
-      this.setState({
-        collapsed: !this.state.collapsed,
-      });
-    };
+        this.state = {
+            collapsed: this.props.isCollapsed,
+        };
+    }
+
+
 
     logout = () =>{
 
@@ -33,7 +33,7 @@ import './Dashboard.css';
                     onBreakpoint={broken => {
                         console.log(broken);}}
                     onCollapse={(collapsed, type) => {
-                        console.log(collapsed, type);}}
+                        console.log(collapsed, type);}} 
                     style={{
                       background: '#fff',
                       display: this.state.SiderMobileCollapse
