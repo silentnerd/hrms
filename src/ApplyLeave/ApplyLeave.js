@@ -107,7 +107,7 @@ const columns = [
     },
 
   ];
-
+/*
 const leaveType = [];
  getAllLeaveType().then((response) => {
         for (let i = 0; i < response.length; i++) {
@@ -117,24 +117,38 @@ const leaveType = [];
         }
         
     });
-
+*/
 
 class ApplyLeave extends React.Component {
 
    constructor(props) {
        super(props);
        this.state = {
-        
+        leaveType: [],
        }
-       //this.refreshgetAllLeaveType = this.refreshgetAllLeaveType.bind(this)
+       this.refreshgetAllLeaveType = this.refreshgetAllLeaveType.bind(this)
    }
 
-    componentDidMount() {
-        //refreshgetAllLeaveType();
-  
+    refreshgetAllLeaveType(){
+  this.state.leaveType.splice(0, this.state.leaveType.length);
+        getAllLeaveType().then((response) => {
+                for (let i = 0; i < response.length; i++) {
         
+                    this.state.leaveType.push(<Option key={response[i].leaveTypeValue}>{response[i].leaveTypeValue}</Option>);
+
+                }
+                
+            });
+
+            console.log(this.state.leaveType);
+    }
+
+    componentDidMount() {
+        this.refreshgetAllLeaveType();
 
     }
+
+  
 
 
    
@@ -203,7 +217,7 @@ class ApplyLeave extends React.Component {
                                                     <InputGroup compact>
 
                                                         <Select defaultValue="Type of Leave">
-                                                            {leaveType}
+                                                            {this.state.leaveType}
                                                         </Select>
 
                                                     </InputGroup>
