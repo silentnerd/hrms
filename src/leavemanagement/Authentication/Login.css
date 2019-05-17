@@ -48,17 +48,7 @@ font-size:12px;
   text-align: center;
   margin-left: 35px;
 }
-a {
-  font-size: 12px;
-  color: #1890ff;
-  text-decoration: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.3s;
-  -webkit-text-decoration-skip: objects;
-  margin-left: 5px;
-}
+
 
 
 #components-form-demo-normal-login .login-form {
