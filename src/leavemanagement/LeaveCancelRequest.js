@@ -2,7 +2,8 @@ import React from 'react';
 import {
     Breadcrumb,
     Table,
-    Input
+    Input,
+    Tag
 } from 'antd';
 
 const Search = Input.Search;
@@ -21,8 +22,30 @@ class LeaveCancelRequest extends React.Component {
                 key: 'view'
             }, {
                 title: 'Leave Type',
-                dataIndex: 'type',
-                key: 'type'
+                dataIndex: 'tags',
+                key: 'tags',
+                render: tags => (
+                <span>
+                    {tags.map(tag => {
+                    let color = tag ;
+                    if (tag === 'Medical') {
+                        color = 'volcano';
+                    }
+                    else if (tag === 'Annual') {
+                    color = 'green';
+                    }
+                    else if (tag === 'Casual') {
+                    color = 'geekblue';
+                    }
+                    
+                    return (
+                        <Tag color={color} key={tag}>
+                        {tag.toUpperCase()}
+                        </Tag>
+                    );
+                    })}
+                </span>
+                ),
             }, {
                 title: 'Cancel Reason',
                 dataIndex: 'reason',
@@ -35,19 +58,19 @@ class LeaveCancelRequest extends React.Component {
                 key: '1',
                 name: 'Mark',
                 view: 'view',
-                type: 'type',
+                tags: ['Medical'],
                 reason: 'reason'
             }, {
                 key: '2',
                 name: 'James',
                 view: 'view',
-                type: 'type',
+                tags: ['Annual'],
                 reason: 'reason'
             }, {
                 key: '3',
                 name: 'Paul',
                 view: 'view',
-                type: 'type',
+                tags: ['Casual'],
                 reason: 'reason'
             }
         ];
