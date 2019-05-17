@@ -24,8 +24,9 @@ class Signup extends React.Component {
       
       <Form onSubmit={this.handleSubmit} className="signup-form">
 
-      <h5>Leave Management System</h5>
-    
+      <h6>LMS</h6>
+      <h5 className="title">L E A V E  M A N A G E M E N T  S Y S T E M</h5>
+     <br></br>
       
         <Form.Item>
           {getFieldDecorator('username', {

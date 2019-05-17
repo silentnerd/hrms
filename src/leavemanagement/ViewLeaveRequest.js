@@ -116,7 +116,7 @@ class ViewLeaveRequest extends React.Component {
           <Breadcrumb.Item>View Request</Breadcrumb.Item>
         </Breadcrumb>
         <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-        <Search placeholder="input search text" onSearch={value => console.log(value)}  style={{ width: 200 }}/>
+        <Search placeholder="Search..." onSearch={value => console.log(value)}  style={{ width: 200 }}/>
         <br></br>
         <br></br>
           <Table columns={columns} dataSource={data} />

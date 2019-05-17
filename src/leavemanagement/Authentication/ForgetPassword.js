@@ -20,26 +20,25 @@ class ForgetPassword extends React.Component {
       <div className="forgotPassword">
       
       <div className="forgot-center">
-      <Form onSubmit={this.handleSubmit} className="forget-form">
-   
-      <h4>ForgetPassword</h4>
-     
+      <Form onSubmit={this.handleSubmit} className="forgot-form">
+      <h6>LMS</h6>
+      <h5 className="title">L E A V E  M A N A G E M E N T  S Y S T E M</h5>
+     <br></br>
        
-        <Form.Item>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
+          <Form.Item>
+          {getFieldDecorator('email', {
+            rules: [{ required: true, message: 'Please input your email!' }],
           })(
             <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type="password"
-              placeholder="Password"
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              placeholder="Email"
             />,
           )}
         </Form.Item>
         <Form.Item>
          
           <Button   type="primary" htmlType="submit" className="forgot-form-button">
-           ForgetPassword
+           Forget Password
           </Button>
           <Button  href="Login" type="default" htmlType="submit" className="login-form-button">Login</Button>
         </Form.Item>

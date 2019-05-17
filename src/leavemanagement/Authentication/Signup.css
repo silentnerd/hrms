@@ -1,7 +1,6 @@
 .signup-center{
     margin-left: auto;
     margin-right: auto;
-    margin-top: -150px;
     width: fit-content;
     padding: 10px;
   }
@@ -15,7 +14,7 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 0px;
-    padding-bottom: 5px;
+    padding-bottom: 30px;
     border-radius: 5px;
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -34,12 +33,22 @@
   
   
 
-h5 {
-    margin-top: -100px;
-    color: #1890ff;
-    font-weight: 500;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+.signup-form h6 {
+
+  color: #1890ff;
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+
+}
+
+.title {
+
+  color: grey;
+  font-size: 9px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+
 }
   
   #components-form-demo-normal-signup .signup-form {

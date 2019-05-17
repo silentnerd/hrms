@@ -22,8 +22,9 @@ class Login extends React.Component {
       <div className="login-center">
       <Form onSubmit={this.handleSubmit} className="login-form">
    
-      <h5>HRM</h5>
-     
+      <h6>LMS</h6>
+      <h5 className="title">L E A V E  M A N A G E M E N T  S Y S T E M</h5>
+      <br></br>
         <Form.Item>
            {getFieldDecorator('username', {
             rules: [{ required: true, message: 'Please input your username!' }],
@@ -56,14 +57,9 @@ class Login extends React.Component {
           <Button   type="primary" htmlType="submit" className="login-form-button">
             Log in
           </Button>
-          <div class="text-right p-t-225">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
-
-						<a class="txt2" href="Signup">
-							Sign Up
-						</a>
+          <div className="text-right p-t-225">
+						<span className="txt1">Don’t have an account? </span>
+            <a className="txt2" href="Signup"> Sign Up</a>
 					</div>
         </Form.Item>
       </Form>

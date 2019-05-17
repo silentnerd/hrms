@@ -23,7 +23,9 @@ class HeaderComponent extends React.Component {
             collapsed: !this.state.collapsed
         });
     };
-    logout = () => {}
+    logout = () => {
+        this.props.history.push('/login')
+    }
 
     render() {
         return (
